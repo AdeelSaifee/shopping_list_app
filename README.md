@@ -22,7 +22,12 @@ Targeted and optimized strictly for Android and iOS.
 
 Throughout this project, several critical Flutter and Dart concepts were studied, practiced, and integrated into production-ready code:
 
-### 0. HTTP POST & Data Serialization
+### 0. Asynchronous Network Handling & Response Lifecycle
+- **Awaiting Network Futures:** Converted form submissions into `async` operations awaiting `http.Response` resolution to ensure cloud persistence completes before navigating away.
+- **Async Gap Safety (`context.mounted`):** Prevented outdated BuildContext access by checking `if (!context.mounted) return;` across asynchronous delays.
+- **HTTP Response Inspection:** Handled `response.statusCode` and extracted JSON response payloads containing server-side identifiers.
+
+
 - **REST Endpoints (`Uri.https`):** Constructed secure target URLs pointing to Firebase collections with mandatory `.json` suffix.
 - **JSON Encoding (`dart:convert`):** Serialized Dart Maps containing primitive fields and category titles into JSON payloads via `json.encode()`.
 - **Server-Side Unique IDs:** Delegated ID generation to Firebase, eliminating client-side UUID collision concerns on POST operations.
