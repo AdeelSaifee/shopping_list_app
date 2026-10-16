@@ -6,6 +6,8 @@ Targeted and optimized strictly for Android and iOS.
 
 ## Features
 
+- **Network Request Optimization (Avoiding Redundant GETs):** Optimized post-creation data synchronization by extracting the generated server key (
+esData['name']) directly from the HTTP POST response. Constructs the local domain model immediately and returns it across the navigation stack, eliminating costly full-database re-fetches.
 - **Cloud Data Synchronization (HTTP GET & POST):** Full bi-directional synchronization with Firebase Realtime Database. Fetches existing groceries on initial widget mounting (initState) and re-synchronizes immediately upon returning from the new item screen.
 - **Data Transformation & In-Memory Rehydration:** Deserializes Firebase nested key-value JSON structures into strongly typed GroceryItem models, rehydrating lightweight category title strings back into rich Category objects with RGB color metadata via irstWhere matching.
 - **Cloud Persistence via HTTP POST:** Sends newly created grocery items directly to Firebase Realtime Database using `http.post()`, serialized to JSON with `dart:convert`.
