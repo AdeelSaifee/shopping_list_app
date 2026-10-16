@@ -6,6 +6,8 @@ Targeted and optimized strictly for Android and iOS.
 
 ## Features
 
+- **Cloud Data Synchronization (HTTP GET & POST):** Full bi-directional synchronization with Firebase Realtime Database. Fetches existing groceries on initial widget mounting (initState) and re-synchronizes immediately upon returning from the new item screen.
+- **Data Transformation & In-Memory Rehydration:** Deserializes Firebase nested key-value JSON structures into strongly typed GroceryItem models, rehydrating lightweight category title strings back into rich Category objects with RGB color metadata via irstWhere matching.
 - **Cloud Persistence via HTTP POST:** Sends newly created grocery items directly to Firebase Realtime Database using `http.post()`, serialized to JSON with `dart:convert`.
 - **Backend HTTP Client Integration:** Added official `http` package with namespaced alias `as http` for structured REST API communication with cloud services.
 - **Grocery Item Management:** Add new grocery items with custom name, numeric quantity, and category classification across 10 distinct categories (Vegetables, Fruit, Meat, Dairy, Carbs, Sweets, Spices, Convenience, Hygiene, Other).
