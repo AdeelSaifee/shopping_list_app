@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+// ignore: unused_import
+import 'package:http/http.dart' as http;
+
 import 'package:shopping_list_app/data/categories.dart';
 import 'package:shopping_list_app/models/category.dart';
 import 'package:shopping_list_app/models/grocery_item.dart';

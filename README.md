@@ -6,6 +6,7 @@ Targeted and optimized strictly for Android and iOS.
 
 ## Features
 
+- **Backend HTTP Client Integration:** Added official `http` package with namespaced alias `as http` for structured REST API communication with cloud services.
 - **Grocery Item Management:** Add new grocery items with custom name, numeric quantity, and category classification across 10 distinct categories (Vegetables, Fruit, Meat, Dairy, Carbs, Sweets, Spices, Convenience, Hygiene, Other).
 - **Form Orchestration & GlobalKey Architecture:** Integrated Flutter's built-in `Form` widget bound to a `GlobalKey<FormState>()`, eliminating individual controller bloat and synchronizing validation, state saving, and form resetting from outside the widget tree.
 - **Comprehensive Form Validation & Instant Error Feedback:** Inline validation enforcing name length boundaries (between 2 and 50 characters) and numeric constraints for quantity (valid, positive integer > 0), with instant error label feedback.
@@ -90,6 +91,7 @@ shopping_list_app/
 Defined in `pubspec.yaml`:
 
 - `cupertino_icons: ^1.0.8`
+- `http: ^1.6.0` (REST API communication & HTTP client)
 
 ### Running the App
 
