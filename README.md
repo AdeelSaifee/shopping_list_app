@@ -6,6 +6,7 @@ Targeted and optimized strictly for Android and iOS.
 
 ## Features
 
+- **Cloud Persistence via HTTP POST:** Sends newly created grocery items directly to Firebase Realtime Database using `http.post()`, serialized to JSON with `dart:convert`.
 - **Backend HTTP Client Integration:** Added official `http` package with namespaced alias `as http` for structured REST API communication with cloud services.
 - **Grocery Item Management:** Add new grocery items with custom name, numeric quantity, and category classification across 10 distinct categories (Vegetables, Fruit, Meat, Dairy, Carbs, Sweets, Spices, Convenience, Hygiene, Other).
 - **Form Orchestration & GlobalKey Architecture:** Integrated Flutter's built-in `Form` widget bound to a `GlobalKey<FormState>()`, eliminating individual controller bloat and synchronizing validation, state saving, and form resetting from outside the widget tree.
@@ -20,6 +21,11 @@ Targeted and optimized strictly for Android and iOS.
 ## Key Learnings & Flutter Concepts Mastered
 
 Throughout this project, several critical Flutter and Dart concepts were studied, practiced, and integrated into production-ready code:
+
+### 0. HTTP POST & Data Serialization
+- **REST Endpoints (`Uri.https`):** Constructed secure target URLs pointing to Firebase collections with mandatory `.json` suffix.
+- **JSON Encoding (`dart:convert`):** Serialized Dart Maps containing primitive fields and category titles into JSON payloads via `json.encode()`.
+- **Server-Side Unique IDs:** Delegated ID generation to Firebase, eliminating client-side UUID collision concerns on POST operations.
 
 ### 1. Form Infrastructure vs Standalone Controllers
 - **`Form` & `GlobalKey<FormState>`:** Mastered why `Form` with a global key is vastly superior to maintaining multiple `TextEditingController` instances for multi-input workflows.
