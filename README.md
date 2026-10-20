@@ -6,6 +6,7 @@ Targeted and optimized strictly for Android and iOS.
 
 ## Features
 
+- **Two-Tier Exception & Transport Error Handling:** Comprehensive defense-in-depth error handling wrapping network operations in `try-catch` blocks. Catches client-side socket/DNS failures and offline connectivity issues (Tier 2) alongside server HTTP error response codes (Tier 1), preventing crashes and rendering clear feedback.
 - **Empty Database State Handling:** Resiliently handles empty backend databases by detecting Firebase's literal `"null"` string response. Safely dismisses loading indicators without throwing type mismatch exceptions (`type 'Null' is not a subtype of Map`), cleanly reverting the UI to the empty list placeholder.
 - **Targeted HTTP DELETE with Optimistic Rollback:** Deletes individual records from the cloud database via targeted REST endpoints (`shopping-list/${item.id}.json`). Employs an optimistic UI strategy that immediately removes rows locally to ensure fluid swipe animations, while automatically rolling back deletions (`list.insert(index, item)`) if the backend responds with an error code (`>= 400`).
 - **HTTP Error Boundary & Failure UI Handling:** Inspects HTTP response status codes (`statusCode >= 400`) during remote communication. Gracefully interrupts the data pipeline upon server (5xx) or client (4xx) failure, rendering descriptive error feedback in the UI rather than remaining permanently stalled on the loading spinner.
