@@ -135,3 +135,7 @@ Defined in `pubspec.yaml`:
    ```bash
    flutter run
    ```
+
+### 4. Stateful Mutation vs FutureBuilder Architecture
+- **When to Use FutureBuilder:** Ideal for pure read-only screens where data is fetched once and rendered without in-place mutations (e.g., product details, static user profiles).
+- **Why Manual State Was Chosen Here:** The Shopping List dashboard requires fine-grained optimistic mutations (_addItem local appending and _removeItem gesture dismissal with index-specific rollback). Because a FutureBuilder binds directly to an asynchronous future instance created once in initState(), local array mutations cannot re-trigger the builder without resetting the future or causing visual desynchronization. Managing _groceryItems, _isLoading, and _error via explicit setState provides complete imperative control over dynamic UI updates.
