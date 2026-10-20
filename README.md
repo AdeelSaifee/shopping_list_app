@@ -6,6 +6,7 @@ Targeted and optimized strictly for Android and iOS.
 
 ## Features
 
+- **Loading & In-Flight State Management:** Visual loading indicators provide immediate feedback during asynchronous operations. Shows a centered `CircularProgressIndicator` during initial data fetching and transitions the "Add Item" button into a miniaturized spinner while disabling input triggers (`onPressed: null`) to prevent accidental duplicate submissions.
 - **Network Request Optimization (Avoiding Redundant GETs):** Optimized post-creation data synchronization by extracting the generated server key (
 esData['name']) directly from the HTTP POST response. Constructs the local domain model immediately and returns it across the navigation stack, eliminating costly full-database re-fetches.
 - **Cloud Data Synchronization (HTTP GET & POST):** Full bi-directional synchronization with Firebase Realtime Database. Fetches existing groceries on initial widget mounting (initState) and re-synchronizes immediately upon returning from the new item screen.
